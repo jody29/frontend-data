@@ -20,7 +20,9 @@ $ git clone https://github.com/jody29/functional-programming.git
 
 ## :pray: Wishlist
 
-## :white_check_mark: Rubric
+## :white_check_mark: Assignment
+Create a data visualisation (using the d3 library) based on given data where data can be explored through interaction using enter(), update(), and exit().
+
 <table>
   <thead>
     <tr>
