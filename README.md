@@ -18,14 +18,6 @@ Clone the repo to your own device
 $ git clone https://github.com/jody29/functional-programming.git
 ```
 
-When using visual studio code, install the Live Server extension
-![liveserver](assets/img/live_server.png)
-<br/>
-Right clik on the index.html file and select
-<br/>
-![livepreview](assets/img/livepreview.png)
-This way you can open the file in your browser
-
 ## :pray: Wishlist
 
 ## :white_check_mark: Rubric
