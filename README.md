@@ -3,12 +3,12 @@
 # Project preview
 
 ## Table of contents
-* [💡 Concept]()
-* [⚙️ Installation]()
-* [:pray: Wishlist]()
-* [:white_check_mark: Rubric]()
-* [:information_source: Resources]()
-* [:copyright: License]()
+* [💡 Concept](https://github.com/jody29/frontend-data/blob/main/README.md#-concept)
+* [⚙️ Installation](https://github.com/jody29/frontend-data#%EF%B8%8F-installation)
+* [:pray: Wishlist](https://github.com/jody29/frontend-data#pray-wishlist)
+* [:white_check_mark: Rubric](https://github.com/jody29/frontend-data#white_check_mark-rubric)
+* [:information_source: Resources](https://github.com/jody29/frontend-data#information_source-resources)
+* [:copyright: License](https://github.com/jody29/frontend-data#copyright-license)
 
 ## 💡 Concept
 
