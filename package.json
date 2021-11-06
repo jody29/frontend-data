@@ -1,0 +1,28 @@
+{
+  "name": "frontend-data",
+  "version": "1.0.0",
+  "description": "make a datavisualisation using the d3 library",
+  "main": "index.js",
+  "scripts": {
+    "test": "run index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jody29/frontend-data.git"
+  },
+  "keywords": [
+    "d3",
+    "javascript",
+    "student",
+    "project"
+  ],
+  "author": "Jody Lorist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jody29/frontend-data/issues"
+  },
+  "homepage": "https://github.com/jody29/frontend-data#readme",
+  "dependencies": {
+    "d3": "^7.1.1"
+  }
+}
