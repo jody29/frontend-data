@@ -15,7 +15,7 @@
 ## ⚙️ Installation
 Clone the repo to your own device
 ```bash
-$ git clone https://github.com/jody29/functional-programming.git
+$ git clone https://github.com/jody29/frontend-data.git
 ```
 
 ## :pray: Wishlist
