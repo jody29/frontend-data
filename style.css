@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+h3 {
+    width: 5em;
+    margin: 1em;
+    padding: 1em 0;
+    text-align: center;
+    background-color: wheat;
+}
+
+rect {
+    fill:cornflowerblue;
+    fill-opacity: .8;
+}
+
+rect:hover {
+    fill-opacity: 1;
+}

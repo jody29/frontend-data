@@ -1,6 +1,21 @@
-// Importing filters
-import checkIfEmpty from "./filters/check-empty.js";
-import removeCaps from "./filters/remove-caps.js";
-import removeQuestionMark from "./filters/remove-question.js";
-import removeSpace from "./filters/remove-space.js";
-import removeStripes from "./filters/remove-stripes.js";
+import removeArrow from './filters/remove-arrow.js'
+import update from './render-barchart.js'
+
+let regionValue = []
+
+export default d3.json('https://data.rivm.nl/covid-19/COVID-19_vaccinatiegraad_per_gemeente_per_week_leeftijd.json')
+.then(json => {
+    json.map(obj => {
+        Object.keys(obj).forEach(key => {
+            obj[key] = removeArrow(obj[key])
+        })
+    })
+    return json
+})
+.then(json => {
+    json.map(obj => {
+        obj.Age_group === '18+' ? regionValue.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed}) : false
+    })
+    update(regionValue.slice(0, 20))
+})
+.catch(err => console.log(err))
