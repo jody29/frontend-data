@@ -1,25 +1,23 @@
+html, body {
+    min-height: 100%;
+}
+
 body {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 {
-    font-family: sans-serif;
+svg {
+    background-color: whitesmoke;
 }
 
-h3 {
-    width: 5em;
-    margin: 1em;
-    padding: 1em 0;
-    text-align: center;
-    background-color: wheat;
+.gemeente {
+    fill: skyblue;
+    stroke: black;
 }
 
-rect {
-    fill:cornflowerblue;
-    fill-opacity: .8;
-}
-
-rect:hover {
-    fill-opacity: 1;
+path:hover {
+    fill: navy!important;
 }

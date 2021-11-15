@@ -25,24 +25,14 @@ function update(new_data) {
     g_xaxis.transition().call(xaxis);
     g_yaxis.transition().call(yaxis);
   
-    const rect = g.selectAll('rect')
+    g.selectAll('rect')
     .data(new_data, (d) => d.region)
-    .join(
-      (enter) => {
-        const rect_enter = enter.append('rect').attr('x', 0);
-        rect_enter.append('title');
-        return rect_enter;
-      },
-      (update) => update,
-      (exit) => exit.remove()
-    );
-
-    rect.transition()
-      .attr('height', yscale.bandwidth())
-      .attr('width', (d) => xscale(d.vaccination))
-      .attr('y', (d) => yscale(d.region));
-  
-    rect.select('title').text((d) => d.region);
+    .join('rect')
+    .transition()
+    .attr('height', yscale.bandwidth())
+    .attr('width', (d) => xscale(d.vaccination))
+    .attr('y', (d) => yscale(d.region))
+    .select('title').text((d) => d.region)
 }
 
 export default update

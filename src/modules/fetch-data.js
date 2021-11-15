@@ -16,6 +16,6 @@ export default d3.json('https://data.rivm.nl/covid-19/COVID-19_vaccinatiegraad_p
     json.map(obj => {
         obj.Age_group === '18+' ? regionValue.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed}) : false
     })
-    update(regionValue.slice(0, 20))
+    update(regionValue.slice(30, 60))
 })
 .catch(err => console.log(err))
