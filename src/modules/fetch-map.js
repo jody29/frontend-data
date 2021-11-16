@@ -7,6 +7,7 @@ import drawMap from "./render-map.js"
 
 const test = './src/data/gemeenten.json'
 const vaccinatie = './src/data/covid.json'
+const gemeente = './src/data/2021.json'
 
 let gemeentenData
 let vaccinData = []
@@ -44,7 +45,7 @@ d3.json(test).then(
     })
     .then(data => {
         data.map(obj => {
-            obj.Age_group === '18+' ? vaccinData.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed, code: obj.Region_code.split('GM').join('')}) : false
+            obj.Age_group === '18+' ? vaccinData.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed, code: obj.Region_code.split('gm').join('')}) : false
             // vaccinData.push({zkh: obj.Hospital_admission, gemeente: obj.Municipality_name})
         })
         console.log(vaccinData)

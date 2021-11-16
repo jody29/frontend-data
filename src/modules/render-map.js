@@ -15,6 +15,7 @@ let drawMap = (gemeentenData, vaccinData) => {
     canvas.selectAll('path')
     .data(gemeentenData)
     .join('path')
+    .attr('aria-label', (d) => d.properties.gemeentena)
     .attr('transform', `translate(-${scale/8.3}, ${scale+600})`)
     .attr('d', path)
     .attr('class', 'gemeente')
@@ -27,17 +28,17 @@ let drawMap = (gemeentenData, vaccinData) => {
         console.log(gemeente)
         
         if (percentage <= 50) {
-            return '#B7FFBF'
+            return '#0B2310'
         } else if (percentage <= 60) {
-            return '#95F985'
+            return '#02491F'
         } else if (percentage <= 70) {
-            return '#4DED30'
+            return '#0A7136'
         } else if (percentage <= 80) {
-            return '#26D701'
+            return '#4DED30'
         } else if (percentage <= 90) {
-            return '#00C301'
+            return '#95F985'
         } else if (percentage <= 100) {
-            return '#00AB08'
+            return '#B7FFBF'
         }
     })
 
