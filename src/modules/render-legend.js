@@ -6,7 +6,7 @@ function renderLegend(colors) {
     const svg = d3.select('#legend')
     .attr('width', width)
     .attr('height', height)
-    .attr('transform', 'translate(350, -440)')
+    .attr('transform', 'translate(350, -430)')
 
     const g = svg.selectAll('g')
     .data(colors, (d) => d.colors)
