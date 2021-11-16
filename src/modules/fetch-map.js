@@ -4,15 +4,16 @@ import removeSpace from "./filters/remove-space.js"
 import removeCaps from "./filters/remove-caps.js"
 import removeStripes from "./filters/remove-stripes.js"
 import drawMap from "./render-map.js"
+import renderLegend from './render-legend.js'
 
-const test = './src/data/gemeenten.json'
+const gemeenten = './src/data/gemeenten.json'
 const vaccinatie = './src/data/covid.json'
-const gemeente = './src/data/2021.json'
 
 let gemeentenData
 let vaccinData = []
+let colors = [{ color:'#B7FFBF', value: 50 }, { color:'#95F985', value: 60}, { color:'#4DED30', value: 70}, { color:'#0A7136', value: 80}, { color:'#02491F', value: 90}, { color:'#0B2310', value: 100}]
 
-d3.json(test).then(
+d3.json(gemeenten).then(
     data => {
         data.features.map(obj => {
         Object.keys(obj).forEach(key => {
@@ -27,7 +28,6 @@ d3.json(test).then(
 })
 .then(data => {
     gemeentenData = data.features
-    console.log(gemeentenData)
 })
 .then(
     d3.json(vaccinatie)
@@ -45,10 +45,10 @@ d3.json(test).then(
     })
     .then(data => {
         data.map(obj => {
-            obj.Age_group === '18+' ? vaccinData.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed, code: obj.Region_code.split('gm').join('')}) : false
-            // vaccinData.push({zkh: obj.Hospital_admission, gemeente: obj.Municipality_name})
+            obj.Age_group === '18+' ? vaccinData.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed}) : false
         })
-        console.log(vaccinData)
-        drawMap(gemeentenData, vaccinData)
+        drawMap(gemeentenData, vaccinData, colors)
+        renderLegend(colors)
+        
     })
 )

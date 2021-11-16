@@ -5,7 +5,7 @@ let canvas = d3.select('#canvas')
 .attr('width', width)
 .attr('height', height)
 
-let drawMap = (gemeentenData, vaccinData) => {
+function drawMap(gemeentenData, vaccinData, colors) {
 
     let scale = 7500
     let projection = d3.geoMercator().scale(scale)
@@ -15,7 +15,6 @@ let drawMap = (gemeentenData, vaccinData) => {
     canvas.selectAll('path')
     .data(gemeentenData)
     .join('path')
-    .attr('aria-label', (d) => d.properties.gemeentena)
     .attr('transform', `translate(-${scale/8.3}, ${scale+600})`)
     .attr('d', path)
     .attr('class', 'gemeente')
@@ -25,24 +24,21 @@ let drawMap = (gemeentenData, vaccinData) => {
             return item['region'] === id
         })
         let percentage = gemeente.vaccination
-        console.log(gemeente)
         
         if (percentage <= 50) {
-            return '#0B2310'
+            return colors[0].color
         } else if (percentage <= 60) {
-            return '#02491F'
+            return colors[1].color
         } else if (percentage <= 70) {
-            return '#0A7136'
+            return colors[2].color
         } else if (percentage <= 80) {
-            return '#4DED30'
+            return colors[3].color
         } else if (percentage <= 90) {
-            return '#95F985'
+            return colors[4].color
         } else if (percentage <= 100) {
-            return '#B7FFBF'
+            return colors[5].color
         }
     })
-
-    console.log(gemeentenData)
 }
 
 export default drawMap
