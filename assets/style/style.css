@@ -5,19 +5,22 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     margin: 0;
+    background-color: rgb(33, 33, 63);
+
 }
 
-svg {
-    background-color: whitesmoke;
+h1 {
+    font-family: sans-serif;
+    color: white;
+    margin-left: 1em;
 }
 
 .gemeente {
-    fill: skyblue;
-    stroke: black;
+    stroke: white;
 }
 
 path:hover {
-    fill: navy;
+    stroke-width: 3px;
 }
