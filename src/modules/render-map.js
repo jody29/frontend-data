@@ -74,7 +74,7 @@ function drawMap(gemeentenData, vaccinData, colors) { // define function with ge
 
         fillRect.attr('height', 50) // give the progress rectangle a height of 50
         .transition() // add a transition
-        .ease(d3.easeCircle)
+        .ease(d3.easeCircle) // add a ease to the transition
         .duration(1000) // transition should take a second
         .attr('width', (value * 300) / 100) // width should go from 0 to the right percentage
         .attr('fill', () => {
