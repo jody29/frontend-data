@@ -1,6 +1,6 @@
 ### Frontend Data
 
-# Project preview
+# Vaccination percentage per municipality
 ![preview](assets/img/preview.png)
 [Live version](https://jody29.github.io/frontend-data/)
 
