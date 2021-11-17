@@ -12,6 +12,7 @@
 * [:copyright: License](https://github.com/jody29/frontend-data#copyright-license)
 
 ## 💡 Concept
+The concept for this project is to render a map of all the municipalities in the Netherlands. Every municipality gets a color which represents the percentage of people who are vaccinated in that municipality. This will show in which municipalities the most people are vaccinated. This will also show which municipalities have a low vaccination percentage
 
 ## ⚙️ Installation
 Clone the repo to your own device
@@ -20,6 +21,8 @@ $ git clone https://github.com/jody29/frontend-data.git
 ```
 
 ## :pray: Wishlist
+* When clicking on a municipality, zoom to the municipality
+* Have the geojson file of 2021, because 3 municipalities have fused into one
 
 ## :white_check_mark: Assignment
 Create a data visualisation (using the d3 library) based on given data where data can be explored through interaction using enter(), update(), and exit().
@@ -77,7 +80,9 @@ Create a data visualisation (using the d3 library) based on given data where dat
 * My support group.
 * All other students who helped me in time of need.
 
-### inspiration sources
+### data sources
+* Vaccination data by RIVM: [vaccination](https://data.rivm.nl/covid-19/COVID-19_vaccinatiegraad_per_gemeente_per_week_leeftijd.json)
+
 
 ## :copyright: License
 ![GitHub](https://img.shields.io/github/license/jody29/TechTrack?style=for-the-badge)
