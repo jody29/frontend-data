@@ -5,6 +5,19 @@ let canvas = d3.select('#canvas')
 .attr('width', width)
 .attr('height', height)
 
+let svg = d3.select('#percentage')
+.append('svg')
+.attr('width', 300)
+.attr('height', 100)
+
+let bgRect = svg.append('rect')
+.attr('width', 300)
+.attr('height', 50)
+.style('opacity', 0)
+.attr('fill', 'dimgray')
+
+let fillRect = svg.append('rect')
+
 function drawMap(gemeentenData, vaccinData, colors) {
     let scale = 7500
     let projection = d3.geoMercator().scale(scale)
@@ -46,14 +59,42 @@ function drawMap(gemeentenData, vaccinData, colors) {
         let value = e.target.getAttribute('data-value')
         let gemeente = e.target.getAttribute('data-gemeente')
 
+        console.log(value)
+
+        console.log((value * 300) / 100)
+
         d3.select('#percentage')
         .style('padding', '2em')
         .select('h2')
         .text(gemeente)
 
+        bgRect.transition()
+        .style('opacity', 1)
+
+        fillRect.attr('height', 50)
+        .transition()
+        .duration(1000)
+        .attr('width', (value * 300) / 100)
+        .attr('fill', () => {
+            if (value <= 50) {
+                return colors[0].color
+            } else if (value <= 60) {
+                return colors[1].color
+            } else if (value <= 70) {
+                return colors[2].color
+            } else if (value <= 80) {
+                return colors[3].color
+            } else if (value <= 90) {
+                return colors[4].color
+            } else if (value <= 100) {
+                return colors[5].color
+            }
+        })
+
         d3.select('#percentage')
         .select('p')
         .text(value + '%')
+        
     })
 }
 
