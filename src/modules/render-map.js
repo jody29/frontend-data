@@ -15,7 +15,7 @@ function drawMap(gemeentenData, vaccinData, colors) {
     canvas.selectAll('path')
     .data(gemeentenData)
     .join('path')
-    .attr('transform', `translate(-${scale/8.3}, ${scale+600})`)
+    .attr('transform', `translate(-${scale/8.3}, ${scale+585})`)
     .attr('d', path)
     .attr('class', 'gemeente')
     .attr('fill', (d) => {
@@ -24,6 +24,7 @@ function drawMap(gemeentenData, vaccinData, colors) {
             return item['region'] === id
         })
         let percentage = gemeente.vaccination
+        d.properties.percentage = percentage
         
         if (percentage <= 50) {
             return colors[0].color
@@ -38,6 +39,22 @@ function drawMap(gemeentenData, vaccinData, colors) {
         } else if (percentage <= 100) {
             return colors[5].color
         }
+    })
+    .attr('data-gemeente', (d) => d.properties.gemeentena)
+    .attr('data-value', (d) => d.properties.percentage)
+    .on('click', (e) => {
+
+        let value = e.target.getAttribute('data-value')
+        let gemeente = e.target.getAttribute('data-gemeente')
+
+        d3.select('#percentage')
+        .style('padding', '2em')
+        .select('h2')
+        .text(gemeente)
+
+        d3.select('#percentage')
+        .select('p')
+        .text(value + '%')
     })
 }
 

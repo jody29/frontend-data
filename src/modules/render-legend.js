@@ -6,7 +6,7 @@ function renderLegend(colors) {
     const svg = d3.select('#legend')
     .attr('width', width)
     .attr('height', height)
-    .attr('transform', 'translate(350, -430)')
+    .attr('transform', 'translate(350, -290)')
 
     const g = svg.selectAll('g')
     .data(colors, (d) => d.colors)
@@ -20,6 +20,7 @@ function renderLegend(colors) {
     .attr('y', (d, i) => d.value + (i * innerPadding) - 15)
     .attr('fill', (d) => d.color)
     .attr('stroke', 'white')
+    .style('opacity', '.5')
 
 
     const text = g.append('text')

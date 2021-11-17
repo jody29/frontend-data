@@ -22,6 +22,7 @@ h1 {
 .gemeente {
     stroke: white;
     opacity: .5;
+    cursor: pointer;
 }
 
 path:hover {
@@ -32,4 +33,27 @@ path:hover {
 
 .text {
     color: white;
+}
+
+#percentage {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 10em;
+    top: 10em;
+    color: white;
+    width: fit-content;
+    background-color: rgb(40, 40, 40);
+    border-radius: 2em;
+}
+
+#percentage h2 {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#percentage p {
+    text-align: center;
+    font-family: sans-serif;
 }

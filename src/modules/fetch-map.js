@@ -1,8 +1,6 @@
 import removeSign from "./filters/remove_sign.js"
 import removeArrow from "./filters/remove-arrow.js"
 import removeSpace from "./filters/remove-space.js"
-import removeCaps from "./filters/remove-caps.js"
-import removeStripes from "./filters/remove-stripes.js"
 import drawMap from "./render-map.js"
 import renderLegend from './render-legend.js'
 
@@ -20,8 +18,6 @@ d3.json(gemeenten).then(
             obj.properties.gemeentena = removeArrow(obj.properties.gemeentena)
             obj.properties.gemeentena = removeSpace(obj.properties.gemeentena)
             obj.properties.gemeentena = removeSign(obj.properties.gemeentena)
-            obj.properties.gemeentena = removeCaps(obj.properties.gemeentena)
-            obj.properties.gemeentena = removeStripes(obj.properties.gemeentena)
         })
     })
     return data
@@ -37,8 +33,6 @@ d3.json(gemeenten).then(
                 obj[key] = removeArrow(obj[key])
                 obj[key] = removeSpace(obj[key])
                 obj[key] = removeSign(obj[key])
-                obj[key] = removeCaps(obj[key])
-                obj[key] = removeStripes(obj[key])
             })
         })
         return data
