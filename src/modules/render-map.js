@@ -77,7 +77,7 @@ function drawMap(gemeentenData, vaccinData, colors) { // define function with ge
         .duration(1000) // transition should take a second
         .attr('width', (value * 300) / 100) // width should go from 0 to the right percentage
         .attr('fill', () => {
-            if (value <= 50) { // allready explained this on row 42
+            if (value <= 50) { // allready explained this on row 42 but now i use the value instead of percentage
                 return colors[0].color
             } else if (value <= 60) {
                 return colors[1].color

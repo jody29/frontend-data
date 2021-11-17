@@ -1,12 +1,12 @@
-function renderLegend(colors) {
-    const width = 150
-    const height = 280
-    const innerPadding = 30
+function renderLegend(colors) { // define function renderLegend with colors as parameter
+    const width = 150 // width for the svg
+    const height = 280 // height for the svg
+    const innerPadding = 30 // innerPadding for the svg
 
-    const svg = d3.select('#legend')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('transform', 'translate(350, -290)')
+    const svg = d3.select('#legend') // select svg with id legend
+    .attr('width', width) // assign width to the svg
+    .attr('height', height) // assign height to the svg
+    .attr('transform', 'translate(350, -290)') // svg should go up a bit, so it's visible
 
     const g = svg.selectAll('g')
     .data(colors, (d) => d.colors)
@@ -22,7 +22,6 @@ function renderLegend(colors) {
     .attr('stroke', 'white')
     .style('opacity', '.5')
 
-
     const text = g.append('text')
     .text((d) => 'onder ' + d.value + '%')
     .attr('x', 60)
@@ -30,9 +29,6 @@ function renderLegend(colors) {
     .style('fill', 'white')
     .style('font-family', 'sans-serif')
     
-
-    
-
 }
 
 export default renderLegend
