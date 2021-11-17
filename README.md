@@ -2,6 +2,7 @@
 
 # Project preview
 ![preview](assets/img/preview.png)
+[Live version](https://jody29.github.io/frontend-data/)
 
 ## Table of contents
 * [💡 Concept](https://github.com/jody29/frontend-data/blob/main/README.md#-concept)
