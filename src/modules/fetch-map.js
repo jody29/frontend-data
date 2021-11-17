@@ -45,8 +45,8 @@ d3.json(gemeenten).then( // fetch the municipalities
             obj.Age_group === '18+' ? vaccinData.push({region: obj.Region_name, vaccination: obj.Vaccination_coverage_completed}) : false
             // if the age is 18+, then assign the region name and vaccination percentage as object to the array
         })
-        drawMap(gemeentenData, vaccinData, colors)
-        renderLegend(colors)
+        drawMap(gemeentenData, vaccinData, colors) // call drawMap function with gemeentenData, vaccinatieData & colors as arguments
+        renderLegend(colors) // call renderLegend function with colors as argument
         
     })
 )

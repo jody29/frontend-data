@@ -1,6 +1,7 @@
 ### Frontend Data
 
 # Project preview
+![preview](assets/img/preview.png)
 
 ## Table of contents
 * [💡 Concept](https://github.com/jody29/frontend-data/blob/main/README.md#-concept)
