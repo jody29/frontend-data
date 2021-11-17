@@ -17,17 +17,17 @@ function renderLegend(colors) { // define function renderLegend with colors as p
     .attr('width', 20) // width is 20
     .attr('height', 20) // height is 20
     .attr('x', 20) // go 20px to the right on the x axis
-    .attr('y', (d, i) => d.value + (i * innerPadding) - 15)
-    .attr('fill', (d) => d.color)
-    .attr('stroke', 'white')
-    .style('opacity', '.5')
+    .attr('y', (d, i) => d.value + (i * innerPadding) - 15) // y is the value + index * 30 - 15 so each rect will be a bit lower
+    .attr('fill', (d) => d.color) // fill should be the current color
+    .attr('stroke', 'white') // stroke is white
+    .style('opacity', '.5') // opacity is .5
 
-    const text = g.append('text')
-    .text((d) => 'onder ' + d.value + '%')
-    .attr('x', 60)
-    .attr('y', (d, i) => d.value + (i * innerPadding))
-    .style('fill', 'white')
-    .style('font-family', 'sans-serif')
+    const text = g.append('text') // add text element
+    .text((d) => 'onder ' + d.value + '%') // add text to the text element
+    .attr('x', 60) // go 60px to the right
+    .attr('y', (d, i) => d.value + (i * innerPadding)) // same as the rectangles
+    .style('fill', 'white') // color of the text should be white
+    .style('font-family', 'sans-serif') // font of the text is sans-serif
     
 }
 
