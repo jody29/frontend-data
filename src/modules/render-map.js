@@ -6,7 +6,6 @@ let canvas = d3.select('#canvas')
 .attr('height', height)
 
 function drawMap(gemeentenData, vaccinData, colors) {
-
     let scale = 7500
     let projection = d3.geoMercator().scale(scale)
 
@@ -57,6 +56,8 @@ function drawMap(gemeentenData, vaccinData, colors) {
         .text(value + '%')
     })
 }
+
+
 
 export default drawMap
 
