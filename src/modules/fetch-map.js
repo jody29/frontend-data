@@ -14,7 +14,7 @@ let vaccinData = [] // here i will save the vaccination data in
 let colors = [{ color:'#B7FFBF', value: 50 }, { color:'#95F985', value: 60}, { color:'#4DED30', value: 70}, { color:'#0A7136', value: 80}, { color:'#02491F', value: 90}, { color:'#0B2310', value: 100}]
 // colors for the map with their value
 
-d3.json(gemeenten).then( // fetch the municipalities
+export default d3.json(gemeenten).then( // fetch the municipalities
     data => {
         data.features.map(obj => { // mapping over the features in the data object
         Object.keys(obj).forEach(key => {
