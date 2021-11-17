@@ -8,15 +8,15 @@ function renderLegend(colors) { // define function renderLegend with colors as p
     .attr('height', height) // assign height to the svg
     .attr('transform', 'translate(350, -290)') // svg should go up a bit, so it's visible
 
-    const g = svg.selectAll('g')
-    .data(colors, (d) => d.colors)
-    .join('g')
-    .attr('class', 'legend')
+    const g = svg.selectAll('g') // select groups in the svg
+    .data(colors, (d) => d.colors) // every color is a data object
+    .join('g') // for every color make a color
+    .attr('class', 'legend') // add class legend to group element
 
-    const rect = g.append('rect')
-    .attr('width', 20)
-    .attr('height', 20)
-    .attr('x', 20)
+    const rect = g.append('rect') // add rectangle to g
+    .attr('width', 20) // width is 20
+    .attr('height', 20) // height is 20
+    .attr('x', 20) // go 20px to the right on the x axis
     .attr('y', (d, i) => d.value + (i * innerPadding) - 15)
     .attr('fill', (d) => d.color)
     .attr('stroke', 'white')
